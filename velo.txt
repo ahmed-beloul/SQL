@@ -1,0 +1,467 @@
+static void Ajouter_Commande_Menu(MySqlConnection connection)
+        {
+
+        }
+        static void Modifier_Commande_Menu(MySqlConnection connection)
+        {
+
+        }
+        static void Supprimer_Commande_Menu(MySqlConnection connection)
+        {
+
+        }
+
+        static int SaisieNombre()
+        {
+            int n;
+            while (!int.TryParse(Console.ReadLine(), out n) || n <= 0)
+            {
+                Console.WriteLine("Erreur, refaire la saisie.");
+            }
+            return n;
+        }
+        static void ModuleGestionPiece(MySqlConnection connection)
+        {
+            Console.Write("-------------------Module Gestion Velo/Piece---------------");
+            Console.WriteLine();
+            Console.WriteLine("GESTION VELO");
+            Console.WriteLine("1 : Creation modele de Velo");
+            Console.WriteLine("2 : Modification infos modele de Velo");
+            Console.WriteLine("3 : Suppression modele de Velo");
+            Console.WriteLine();
+            Console.WriteLine("GESTION PIECE");
+            Console.WriteLine("4 : Creation nouvelle piece");
+            Console.WriteLine("5 : Modification infos piece");
+            Console.WriteLine("6 : Suppression piece");
+            Console.WriteLine();
+            Console.WriteLine("7 : Retour au menu principal");
+
+            int saisie = SaisieNombre();
+            while (saisie != 1 && saisie != 2 && saisie != 3 && saisie != 4 && saisie!=5 && saisie !=6 && saisie != 7)
+            {
+                Console.WriteLine("Reessayez.");
+                saisie = SaisieNombre();
+            }
+            if(saisie==1)
+            {
+                Ajouter_Modele_Menu(connection);
+                Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                string retour = Console.ReadLine();
+                while (retour != "1")
+                {
+                    Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                    retour = Console.ReadLine();
+                }
+                if (retour == "1")
+                {
+                    Console.Clear();
+                    Debut(connection);
+                }
+            }
+            if (saisie == 2)
+            {
+                Modifier_Modele_Menu(connection);
+                Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                string retour = Console.ReadLine();
+                while (retour != "1")
+                {
+                    Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                    retour = Console.ReadLine();
+                }
+                if (retour == "1")
+                {
+                    Console.Clear();
+                    Debut(connection);
+                }
+            }
+            if (saisie == 3)
+            {
+                Supprimer_Modele_Menu(connection);
+                Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                string retour = Console.ReadLine();
+                while (retour != "1")
+                {
+                    Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                    retour = Console.ReadLine();
+                }
+                if (retour == "1")
+                {
+                    Console.Clear();
+                    Debut(connection);
+                }
+            }
+            if (saisie == 4)
+            {
+                Ajouter_PieceRechange_Menu(connection);
+                Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                string retour = Console.ReadLine();
+                while (retour != "1")
+                {
+                    Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                    retour = Console.ReadLine();
+                }
+                if (retour == "1")
+                {
+                    Console.Clear();
+                    Debut(connection);
+                }
+            }
+            if (saisie == 5)
+            {
+                Modifier_PieceRechange_Menu(connection);
+                Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                string retour = Console.ReadLine();
+                while (retour != "1")
+                {
+                    Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                    retour = Console.ReadLine();
+                }
+                if (retour == "1")
+                {
+                    Console.Clear();
+                    Debut(connection);
+                }
+            }
+            if (saisie == 6)
+            {
+                Supprimer_PieceRechange_Menu(connection);
+                Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                string retour = Console.ReadLine();
+                while (retour != "1")
+                {
+                    Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                    retour = Console.ReadLine();
+                }
+                if (retour == "1")
+                {
+                    Console.Clear();
+                    Debut(connection);
+                }
+            }
+            if (saisie == 7)
+            {
+                Console.Clear();
+                Debut(connection);
+            }
+
+        }
+        static void ModuleGestionClient(MySqlConnection connection)
+        {
+            Console.Write("-------------------Module Gestion Client---------------");
+            Console.WriteLine();
+            Console.WriteLine("GESTION CLIENT PARTICULIER");
+            Console.WriteLine("1 : Creation client particulier");
+            Console.WriteLine("2 : Modification infos client particulier");
+            Console.WriteLine("3 : Suppression client particulier");
+            Console.WriteLine();
+            Console.WriteLine("GESTION CLIENT ENTREPRISE");
+            Console.WriteLine("4 : Creation client entreprise");
+            Console.WriteLine("5 : Modification client entreprise");
+            Console.WriteLine("6 : Suppression client entreprise");
+            Console.WriteLine();
+            Console.WriteLine("7 : Retour au menu principal");
+
+            int saisie = SaisieNombre();
+            while (saisie != 1 && saisie != 2 && saisie != 3 && saisie != 4 && saisie != 5 && saisie != 6 && saisie != 7)
+            {
+                Console.WriteLine("Reessayez.");
+                saisie = SaisieNombre();
+            }
+            if (saisie == 1)
+            {
+                Ajouter_Individu_Menu(connection);
+                Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                string retour = Console.ReadLine();
+                while (retour != "1")
+                {
+                    Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                    retour = Console.ReadLine();
+                }
+                if (retour == "1")
+                {
+                    Console.Clear();
+                    Debut(connection);
+                }
+            }
+            if (saisie == 2)
+            {
+                Modifier_Individu_Menu(connection);
+                Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                string retour = Console.ReadLine();
+                while (retour != "1")
+                {
+                    Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                    retour = Console.ReadLine();
+                }
+                if (retour == "1")
+                {
+                    Console.Clear();
+                    Debut(connection);
+                }
+            }
+            if (saisie == 3)
+            {
+                Supprimer_Individu_Menu(connection);
+                Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                string retour = Console.ReadLine();
+                while (retour != "1")
+                {
+                    Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                    retour = Console.ReadLine();
+                }
+                if (retour == "1")
+                {
+                    Console.Clear();
+                    Debut(connection);
+                }
+            }
+            if (saisie == 4)
+            {
+                Ajouter_Boutique_Menu(connection);
+                Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                string retour = Console.ReadLine();
+                while (retour != "1")
+                {
+                    Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                    retour = Console.ReadLine();
+                }
+                if (retour == "1")
+                {
+                    Console.Clear();
+                    Debut(connection);
+                }
+            }
+            if (saisie == 5)
+            {
+                Modifier_Boutique_Menu(connection);
+                Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                string retour = Console.ReadLine();
+                while (retour != "1")
+                {
+                    Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                    retour = Console.ReadLine();
+                }
+                if (retour == "1")
+                {
+                    Console.Clear();
+                    Debut(connection);
+                }
+            }
+            if (saisie == 6)
+            {
+                Supprimer_Boutique_Menu(connection);
+                Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                string retour = Console.ReadLine();
+                while (retour != "1")
+                {
+                    Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                    retour = Console.ReadLine();
+                }
+                if (retour == "1")
+                {
+                    Console.Clear();
+                    Debut(connection);
+                }
+            }
+            if (saisie == 7)
+            {
+                Console.Clear();
+                Debut(connection);
+            }
+        }
+        static void ModuleGestionFournisseur(MySqlConnection connection)
+        {
+            Console.Write("-------------------Module Gestion Fournisseur---------------");
+            Console.WriteLine();
+            Console.WriteLine("1 : Creation nouveau fournisseur");
+            Console.WriteLine("2 : Modification infos fournisseur");
+            Console.WriteLine("3 : Suppression fournisseur");
+            Console.WriteLine("4: Retour au menu principal");
+            Console.WriteLine();
+            int saisie = SaisieNombre();
+            while (saisie != 1 && saisie != 2 && saisie != 3 && saisie != 4)
+            {
+                Console.WriteLine("Reessayez.");
+                saisie = SaisieNombre();
+            }
+            if (saisie == 1)
+            {
+                Ajouter_Fournisseur_Menu(connection);
+                Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                string retour = Console.ReadLine();
+                while (retour != "1")
+                {
+                    Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                    retour = Console.ReadLine();
+                }
+                if (retour == "1")
+                {
+                    Console.Clear();
+                    Debut(connection);
+                }
+            }
+            if (saisie == 2)
+            {
+                Modifier_Fournisseur_Menu(connection);
+                Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                string retour = Console.ReadLine();
+                while (retour != "1")
+                {
+                    Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                    retour = Console.ReadLine();
+                }
+                if (retour == "1")
+                {
+                    Console.Clear();
+                    Debut(connection);
+                }
+            }
+            if (saisie == 3)
+            {
+                Supprimer_Fournisseur_Menu(connection);
+                Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                string retour = Console.ReadLine();
+                while (retour != "1")
+                {
+                    Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                    retour = Console.ReadLine();
+                }
+                if (retour == "1")
+                {
+                    Console.Clear();
+                    Debut(connection);
+                }
+            }
+            if (saisie == 4)
+            {
+                Console.Clear();
+                Debut(connection);
+            }
+
+        }
+        static void ModuleGestionCommande(MySqlConnection connection)
+        {
+            Console.Write("-------------------Module Gestion Commande---------------");
+            Console.WriteLine();
+            Console.WriteLine("1 : Creation nouvelle commande");
+            Console.WriteLine("2 : Modification infos commande");
+            Console.WriteLine("3 : Suppression commande");
+            Console.WriteLine("4: Retour au menu principal");
+            Console.WriteLine();
+            int saisie = SaisieNombre();
+            while (saisie != 1 && saisie != 2 && saisie != 3 && saisie != 4)
+            {
+                Console.WriteLine("Reessayez.");
+                saisie = SaisieNombre();
+            }
+            if (saisie == 1)
+            {
+                Ajouter_Commande_Menu(connection);
+                Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                string retour = Console.ReadLine();
+                while (retour != "1")
+                {
+                    Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                    retour = Console.ReadLine();
+                }
+                if (retour == "1")
+                {
+                    Console.Clear();
+                    Debut(connection);
+                }
+            }
+            if (saisie == 2)
+            {
+                Modifier_Commande_Menu(connection);
+                Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                string retour = Console.ReadLine();
+                while (retour != "1")
+                {
+                    Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                    retour = Console.ReadLine();
+                }
+                if (retour == "1")
+                {
+                    Console.Clear();
+                    Debut(connection);
+                }
+            }
+            if (saisie == 3)
+            {
+                Supprimer_Commande_Menu(connection);
+                Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                string retour = Console.ReadLine();
+                while (retour != "1")
+                {
+                    Console.WriteLine("Tapper 1 pour revenir au menu principal");
+                    retour = Console.ReadLine();
+                }
+                if (retour == "1")
+                {
+                    Console.Clear();
+                    Debut(connection);
+                }
+            }
+            if (saisie == 4)
+            {
+                Console.Clear();
+                Debut(connection);
+            }
+        }
+        static void ModuleGestionStock(MySqlConnection connection)
+        {
+
+        }
+        static void ModuleStat(MySqlConnection connection)
+        {
+
+        }
+        static int MenuPrincipal()
+        {
+            Console.WriteLine("                              VELOMAX" + '\n');
+            Console.WriteLine("                              Menu principal :");
+            Console.WriteLine("1: Gestion velo/piece de rechange ");
+            Console.WriteLine("2: Gestion clients particulier/entreprise ");
+            Console.WriteLine("3: Gestion des fournisseurs ");
+            Console.WriteLine("4: Gestion des commandes ");
+            Console.WriteLine("5: Gestion du stock ");
+            Console.WriteLine("6: Statistiques");
+            return 1;
+        }
+        static void Debut(MySqlConnection connection)
+        {
+            while (MenuPrincipal() != 0)
+            {
+                int saisi = SaisieNombre();
+                while (saisi != 1 && saisi != 2 && saisi != 3 && saisi != 4 && saisi != 5 && saisi != 6) 
+                {
+                    Console.WriteLine("Reessayez.");
+                    saisi = SaisieNombre();
+                }
+                if(saisi==1)
+                {
+                    ModuleGestionPiece(connection);
+                }
+                if (saisi == 2)
+                {
+                    ModuleGestionClient(connection);
+                }
+                if (saisi == 3)
+                {
+                    ModuleGestionFournisseur(connection);
+                }
+                if (saisi == 4)
+                {
+                    ModuleGestionCommande(connection);
+                }
+                if (saisi == 5)
+                {
+                    ModuleGestionStock(connection);
+                }
+                if (saisi == 6)
+                {
+                    ModuleStat(connection);
+                }
+                Console.ReadKey();
+            }
+        }
